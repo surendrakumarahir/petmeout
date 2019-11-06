@@ -22,7 +22,8 @@ import  avatar from "./assets/avatar.jpg";
 
 const catProfile = [
     {
-        name: "Champs-Élysées Golden triangle flat with mezzanine",
+        name: "JACKIE",
+        type: "Dog, German Shephard",
         profile: labra1,
         des: "Newly renovated tiny apartment with mezzanine, compact and design,well-equipped, direct elevator. (The space design is more suitable for young people)\n" +
             "Located in the center of Paris, surrounded by Avenue Champs Élysées, Avenue George V and Avenue Montaigne, called the Golden Triangle area.\n" +

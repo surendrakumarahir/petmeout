@@ -23,6 +23,9 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;
 }
+a {
+    color: #000000de;
+}
 .main {
   margin-top: 100px;
 }
@@ -59,6 +62,10 @@ body {
 .catProfile-avatar {
     flex-basis: auto !important;
 }
+
+
+/* bashboard pages */
+
 
 /* Navbar */
 /*.navbar {

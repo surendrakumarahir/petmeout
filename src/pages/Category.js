@@ -48,7 +48,7 @@ export default function Category() {
                         {tileData.map(tile => (
 
                             <Grid item md={3} key={tile.img}>
-                                <Link to={`/category/${tile.url}`}>
+                                <Link to={`/category/listing/${tile.url}`}>
                                 <Card className={classes.card}>
                                     <CardActionArea>
                                         <CardMedia

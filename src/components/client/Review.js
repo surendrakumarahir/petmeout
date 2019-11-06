@@ -29,7 +29,7 @@ export default function Review() {
                     <Avatar alt="Remy Sharp" src="https://a0.muscache.com/im/pictures/user/b86cb7c4-21cd-4e70-95c0-e05d1500c0d8.jpg?aki_policy=profile_x_medium" />
                 </ListItemAvatar>
                 <ListItemText
-                    primary="Brunch this weekend?"
+                    primary="Nice Pet ?"
                     secondary={
                         <React.Fragment>
                             <Typography
@@ -51,7 +51,7 @@ export default function Review() {
                     <Avatar alt="Travis Howard" src="https://a0.muscache.com/im/pictures/user/893a0804-ad59-4906-837b-a2b6c0962747.jpg?aki_policy=profile_x_medium" />
                 </ListItemAvatar>
                 <ListItemText
-                    primary="Summer BBQ"
+                    primary="Facts You Need to Know about Pets"
                     secondary={
                         <React.Fragment>
                             <Typography
@@ -73,7 +73,7 @@ export default function Review() {
                     <Avatar alt="Cindy Baker" src="https://a0.muscache.com/im/pictures/user/cb018ae8-bfaf-447f-8f96-8f68530c68ef.jpg?aki_policy=profile_x_medium" />
                 </ListItemAvatar>
                 <ListItemText
-                    primary="Oui Oui"
+                    primary="Awesome Pet"
                     secondary={
                         <React.Fragment>
                             <Typography

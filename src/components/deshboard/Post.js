@@ -1,5 +1,7 @@
 import React from "react";
 
+import  { Link } from  "react-router-dom";
+
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -27,8 +29,10 @@ const useStyles = makeStyles(theme => ({
 
     commentIcons: {
         textAlign: "center",
-    }
-
+    },
+    link : {
+       textDecoration: "none",
+    },
 }));
 
 const Post = (props) => {
@@ -41,18 +45,20 @@ const Post = (props) => {
                     return (
 
                         <Card className={classes.card} key={index}>
-                            <CardHeader
-                                avatar={
-                                    <Avatar  alt="alt" src={post.user.profileImage} />
-                                }
-                                action={
-                                    <IconButton aria-label="settings">
-                                        <MoreVertIcon />
-                                    </IconButton>
-                                }
-                                title={post.user.name}
-                                subheader={post.createdAt}
-                            />
+                            <Link to={`/category/${post.user.uId}`} className={classes.link} >
+                                <CardHeader
+                                    avatar={
+                                        <Avatar  alt="alt" src={post.user.profileImage} />
+                                    }
+                                    action={
+                                        <IconButton aria-label="settings">
+                                            <MoreVertIcon />
+                                        </IconButton>
+                                    }
+                                    title={post.user.name}
+                                    subheader={post.createdAt}
+                                />
+                            </Link>
                             <CardMedia
                                 className={classes.media}
                                 image={post.media[0].image}

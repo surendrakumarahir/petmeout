@@ -1,8 +1,16 @@
 import React from "react";
+import { Header , Footer } from "../layouts"
+import PageNotFount from  "./PageNotFound";
 
 const Error = () => {
   return (
-    <h1>Error</h1>
+      <>
+        <Header/>
+        <div className='main'>
+            <PageNotFount/>
+        </div>
+        <Footer/>
+      </>
   );
 };
 

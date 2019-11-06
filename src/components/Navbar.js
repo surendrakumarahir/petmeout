@@ -104,23 +104,13 @@ export default function Navvar() {
                         inputProps={{ 'aria-label': 'search' }}
                       />
                     </div>
-                  <Link to="/" className={classes.manuLink}>
-                      <Button aria-controls="simple-menu" color="secondary" className={classes.button}>Home</Button>
-                  </Link>
 
-                  <Link to="/dashboard">
-                      <Button color="secondary" className={classes.button}>Dashboard</Button>
-                  </Link>
-                  <Link to="/category">
-                      <Button color="secondary" className={classes.button}>Categories</Button>
-                  </Link>
-                  <Link to="/store">
-                      <Button color="secondary" className={classes.button}>Store</Button>
-                  </Link>
-                  <Link to="/blog">
-                      <Button color="secondary" className={classes.button}>Blog</Button>
-                  </Link>
-                  <IconButton
+                   <Button aria-controls="simple-menu" color="secondary" to="/" component={Link} className={classes.button}>Home</Button>
+                   <Button color="secondary" to="/dashboard" component={Link} className={classes.button}>Dashboard</Button>
+                   <Button color="secondary" to="/category" component={Link} className={classes.button}>Categories</Button>
+                   <Button color="secondary" to="/store" component={Link} className={classes.button}>Store</Button>
+                   <Button color="secondary"  to="/blog" component={Link} className={classes.button}>Blog</Button>
+                   <IconButton
                       aria-label="account of current user"
                       aria-controls="menu-appbar"
                       aria-haspopup="true"

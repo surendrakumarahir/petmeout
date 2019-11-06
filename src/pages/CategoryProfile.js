@@ -75,6 +75,9 @@ const CategoryProfile = () => {
                                         <Typography variant="h4" component="h2" >
                                             { catProfile[0].name }
                                         </Typography>
+                                        <Typography variant="subtitle1" gutterBottom>
+                                            { catProfile[0].type }
+                                        </Typography>
                                     </Grid>
                                     <Grid item md={3} className="catProfile-avatar" >
                                         <Avatar alt="Remy Sharp" src={catProfile[0].user.image} className={classes.bigAvatar} />
@@ -83,6 +86,7 @@ const CategoryProfile = () => {
                                         </Typography>
                                     </Grid>
                                 </Grid>
+                                <div className={classes.profileHead}></div>
                                 <Attributes/>
                                 <div className={classes.profileHead}></div>
                                 <Typography variant="body1" gutterBottom>

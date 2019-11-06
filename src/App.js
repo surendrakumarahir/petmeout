@@ -5,8 +5,9 @@ import Home from "./pages/Home";
 import Deshboard from "./pages/Deshboard";
 import SignUp from "./pages/SignUp";
 import  Category from  "./pages/Category";
-import CategoryProfile from "./pages/CategoryProfile"
-import SingleRoom from "./pages/SingleRoom";
+import CategoryListing from  "./pages/CategoryListing";
+import CategoryProfile from "./pages/CategoryProfile";
+import User from  "./pages/User";
 import Error from "./pages/Error";
 
 
@@ -21,11 +22,12 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/dashboard/" component={Deshboard} />
-            <Route exact path="/dashboard/:id" component={Deshboard} />
+          <Route exact path="/dashboard/:id" component={Deshboard} />
           <Route exact path="/signup/" component={SignUp} />
           <Route exact path="/category/" component={Category} />
+          <Route exact path="/category/listing/:id" component={CategoryListing} />
           <Route exact path="/category/:id" component={CategoryProfile} />
-          <Route exact path="/rooms/:slug" component={SingleRoom} />
+          <Route exact path="/user/" component={User} />
           <Route component={Error} />
         </Switch>
       </>
