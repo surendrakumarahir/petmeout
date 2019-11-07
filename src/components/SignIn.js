@@ -22,10 +22,11 @@ const useStyles = makeStyles(theme => ({
         position: "absolute",
     },
     paper: {
-        margin: theme.spacing(8, 4),
+        margin: theme.spacing(4, 4, 2, 4),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+
     },
     avatar: {
         margin: theme.spacing(1),
@@ -85,6 +86,7 @@ const SignIn = () => {
                                     variant="contained"
                                     color="primary"
                                     className={classes.submit}
+                                    style={{marginTop:"0px"}}
                                 >
                                     Sign In
                                 </Button>
@@ -107,12 +109,11 @@ const SignIn = () => {
                                     color="primary"
                                     className={classes.submit}
                                     component={Link}
-                                    to="/dashboard"
+                                    to="/signup"
                                 >
                                     Create New Account
                                 </Button>
-                                <Box mt={5}>
-                                </Box>
+
                             </form>
                         </div>
                     </Grid>

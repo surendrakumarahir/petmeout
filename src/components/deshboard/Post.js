@@ -35,10 +35,10 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const PostCard = (props, index) => {
+const PostCard = (props) => {
     const classes = useStyles();
     return (
-        <Card className={classes.card} key={index}>
+        <Card className={classes.card} key={props.index}>
             <Link to={`/category/${props.post.user.uId}`} className={classes.link} >
                 <CardHeader
                     avatar={
@@ -107,7 +107,7 @@ const Post = (props) => {
                               props.data.map((post, index) => {
                                   return (
                                       <Grid item md={6} >
-                                          <PostCard post={post} index={index} />
+                                          <PostCard {...props} post={post} index={index} />
                                       </Grid>
 
                                   )
@@ -117,7 +117,7 @@ const Post = (props) => {
                       :
                       props.data.map((post, index) => {
                           return (
-                              <PostCard post={post} index={index} />
+                              <PostCard {...props} post={post} index={index} />
                            )
                       })
               }
@@ -128,7 +128,7 @@ const Post = (props) => {
     );
 };
 
-Post.defaultProps = {
+PostCard.defaultProps = {
     discription:true,
     actions: true,
     grid: false

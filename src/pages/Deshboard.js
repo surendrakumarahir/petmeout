@@ -84,9 +84,15 @@ const Deshboard = () => {
                             <Grid item md={4} >
                                 <Paper className={classes.filterBox}>
                                     <Typography variant="h4" component="h2" >
-                                        Filters
+                                        Filters By Distance
                                     </Typography>
                                     <SliderDistance/>
+                                </Paper>
+
+                                <Paper className={classes.filterBox} style={{ marginTop: "40px"}}>
+                                    <Typography variant="h4" component="h2" >
+                                        Category Filter
+                                    </Typography>
                                     <SelectCat/>
                                 </Paper>
 

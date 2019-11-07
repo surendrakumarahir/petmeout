@@ -80,7 +80,7 @@ const CategoryProfile = () => {
                                         </Typography>
                                     </Grid>
                                     <Grid item md={3} className="catProfile-avatar" >
-                                        <Avatar alt="Remy Sharp" src={catProfile[0].user.image} className={classes.bigAvatar} />
+                                        <Avatar alt="Remy Sharp" src={catProfile[0].user.image} component={Link} to="/userprofile/1221" className={classes.bigAvatar} />
                                         <Typography variant="body2" component="h2" className={classes.userName} >
                                             { catProfile[0].user.name }
                                         </Typography>
