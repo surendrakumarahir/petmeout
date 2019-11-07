@@ -11,7 +11,7 @@ import Paper from "@material-ui/core/Paper";
 import { makeStyles } from '@material-ui/core/styles';
 
 import loginLeftImage from "../assets/login-left.jpg"
-import  SignIn from  "../components/SignIn";
+
 
 import Container from '@material-ui/core/Container';
 import post from  "../data/post";
@@ -19,10 +19,12 @@ import post from  "../data/post";
 import Post from  "../components/deshboard/Post";
 import  SelectCat from "../components/deshboard/SelectCat";
 import SliderDistance from "../components/deshboard/SliderDistance";
+import SignUp from "../components/SignUp";
+// import  SignIn from  "../components/SignIn";
 
 const useStyles = makeStyles(theme => ({
     root: {
-        height: '100vh',
+        height: '80vh',
     },
     image: {
         backgroundImage: `url(${loginLeftImage})`,
@@ -68,7 +70,8 @@ const Deshboard = () => {
                    <Grid container component="main" className={classes.root}>
                         <CssBaseline />
                         <Grid item xs={false} sm={4} md={7} className={classes.image} />
-                         <SignIn/>
+                        <SignUp/>
+                        {/*<SignIn/>*/}
                      </Grid>
                     <Container className={classes.cardGrid} maxWidth="lg">
 

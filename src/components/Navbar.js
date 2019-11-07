@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link , NavLink } from "react-router-dom";
 import logo from "../images/logo.png";
 
 import { fade, makeStyles } from '@material-ui/core/styles';
@@ -105,11 +105,11 @@ export default function Navvar() {
                       />
                     </div>
 
-                   <Button aria-controls="simple-menu" color="secondary" to="/" component={Link} className={classes.button}>Home</Button>
-                   <Button color="secondary" to="/dashboard" component={Link} className={classes.button}>Dashboard</Button>
-                   <Button color="secondary" to="/category" component={Link} className={classes.button}>Categories</Button>
-                   <Button color="secondary" to="/store" component={Link} className={classes.button}>Store</Button>
-                   <Button color="secondary"  to="/blog" component={Link} className={classes.button}>Blog</Button>
+                   <Button color="secondary" to="/" component={NavLink} className={classes.button}>Home</Button>
+                   <Button color="secondary" to="/dashboard" component={NavLink} className={classes.button}>Dashboard</Button>
+                   <Button color="secondary" to="/category" component={NavLink} className={classes.button}>Categories</Button>
+                   <Button color="secondary" to="/store" component={NavLink} className={classes.button}>Store</Button>
+                   <Button color="secondary"  to="/blog" component={NavLink} className={classes.button}>Blog</Button>
                    <IconButton
                       aria-label="account of current user"
                       aria-controls="menu-appbar"

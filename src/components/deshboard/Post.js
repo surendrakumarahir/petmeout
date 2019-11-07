@@ -35,68 +35,102 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const Post = (props) => {
+const PostCard = (props, index) => {
     const classes = useStyles();
     return (
-          <>
-
+        <Card className={classes.card} key={index}>
+            <Link to={`/category/${props.post.user.uId}`} className={classes.link} >
+                <CardHeader
+                    avatar={
+                        <Avatar  alt="alt" src={props.post.user.profileImage} />
+                    }
+                    action={
+                        <IconButton aria-label="settings">
+                            <MoreVertIcon />
+                        </IconButton>
+                    }
+                    title={props.post.user.name}
+                    subheader={props.post.createdAt}
+                />
+            </Link>
+            <CardMedia
+                className={classes.media}
+                image={props.post.media[0].image}
+                title="Paella dish"
+            />
             {
-                props.data.map((post, index) => {
-                    return (
-
-                        <Card className={classes.card} key={index}>
-                            <Link to={`/category/${post.user.uId}`} className={classes.link} >
-                                <CardHeader
-                                    avatar={
-                                        <Avatar  alt="alt" src={post.user.profileImage} />
-                                    }
-                                    action={
-                                        <IconButton aria-label="settings">
-                                            <MoreVertIcon />
-                                        </IconButton>
-                                    }
-                                    title={post.user.name}
-                                    subheader={post.createdAt}
-                                />
-                            </Link>
-                            <CardMedia
-                                className={classes.media}
-                                image={post.media[0].image}
-                                title="Paella dish"
-                            />
-                            <CardContent>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {post.content}
-                                </Typography>
-                            </CardContent>
-                            <CardActions disableSpacing>
-                                <Grid container spacing={2}
-                                      direction="row"
-                                      justify="center"
-                                      alignItems="center" >
-                                    <Grid  item md={6} className={classes.commentIcons} >
-                                        <IconButton aria-label="like">
-                                            <ThumbUpIcon/>
-                                        </IconButton>
-                                    </Grid>
-                                    <Grid  item md={6} className={classes.commentIcons}>
-                                        <IconButton aria-label="comment">
-                                            <ChatBubbleOutlineIcon />
-                                        </IconButton>
-                                    </Grid>
-                                </Grid>
-
-                            </CardActions>
-                        </Card>
-
-
-                    )
-                })
+                props.discription ?
+                    <CardContent>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {props.post.content}
+                        </Typography>
+                    </CardContent>
+                    : null
             }
 
-         </>
+            {
+                props.actions?
+                    <CardActions disableSpacing>
+                        <Grid container spacing={2}
+                              direction="row"
+                              justify="center"
+                              alignItems="center" >
+                            <Grid  item md={6} className={classes.commentIcons} >
+                                <IconButton aria-label="like">
+                                    <ThumbUpIcon/>
+                                </IconButton>
+                            </Grid>
+                            <Grid  item md={6} className={classes.commentIcons}>
+                                <IconButton aria-label="comment">
+                                    <ChatBubbleOutlineIcon />
+                                </IconButton>
+                            </Grid>
+                        </Grid>
+                    </CardActions>
+
+                    : null
+            }
+
+        </Card>
+        )
+
+}
+const Post = (props) => {
+
+
+    return (
+          <>
+              {
+                  props.grid ?
+                      <Grid container spacing={4}>
+                          {
+                              props.data.map((post, index) => {
+                                  return (
+                                      <Grid item md={6} >
+                                          <PostCard post={post} index={index} />
+                                      </Grid>
+
+                                  )
+                              })
+                          }
+                      </Grid>
+                      :
+                      props.data.map((post, index) => {
+                          return (
+                              <PostCard post={post} index={index} />
+                           )
+                      })
+              }
+
+
+          </>
 
     );
 };
 
+Post.defaultProps = {
+    discription:true,
+    actions: true,
+    grid: false
+};
 export default Post;

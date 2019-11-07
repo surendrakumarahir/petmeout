@@ -13,6 +13,7 @@
     "@bit/jakeprins.react-milkshake.grid": "file:./components/grid",
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.5.1",
+    "@material-ui/lab": "^4.0.0-alpha.31",
     "clsx": "latest",
     "material-ui-icons": "^1.0.0-beta.36",
     "react": "latest",

@@ -15,7 +15,12 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles(theme => ({
-
+    root: {
+        top: 0,
+        background: "rgba(255, 255, 255, 0.3)",
+        right: 0,
+        position: "absolute",
+    },
     paper: {
         margin: theme.spacing(8, 4),
         display: 'flex',
@@ -39,7 +44,7 @@ const SignIn = () => {
     const classes = useStyles();
     return (
 
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={4} component={Paper} elevation={6} square className={classes.root}>
                         <div className={classes.paper}>
                             <Avatar className={classes.avatar}>
                                 <LockOutlinedIcon />
@@ -95,6 +100,17 @@ const SignIn = () => {
                                         </Link>
                                     </Grid>
                                 </Grid>
+                                <Button
+                                    type="submit"
+                                    fullWidth
+                                    variant="contained"
+                                    color="primary"
+                                    className={classes.submit}
+                                    component={Link}
+                                    to="/dashboard"
+                                >
+                                    Create New Account
+                                </Button>
                                 <Box mt={5}>
                                 </Box>
                             </form>

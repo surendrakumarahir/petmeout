@@ -7,6 +7,7 @@ import SignUp from "./pages/SignUp";
 import  Category from  "./pages/Category";
 import CategoryListing from  "./pages/CategoryListing";
 import CategoryProfile from "./pages/CategoryProfile";
+import UserProfile from  "./pages/UserProfile";
 import User from  "./pages/User";
 import Error from "./pages/Error";
 
@@ -27,6 +28,7 @@ export default function App() {
           <Route exact path="/category/" component={Category} />
           <Route exact path="/category/listing/:id" component={CategoryListing} />
           <Route exact path="/category/:id" component={CategoryProfile} />
+          <Route exact path="/userprofile/:id" component={UserProfile} />
           <Route exact path="/user/" component={User} />
           <Route component={Error} />
         </Switch>

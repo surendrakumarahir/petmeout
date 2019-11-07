@@ -8,6 +8,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 
+import RatingStar from "./Rating";
+
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
@@ -39,11 +41,16 @@ export default function Review() {
                                 color="textPrimary"
                             >
                                 Ali Connors
+
+                                <RatingStar />
                             </Typography>
                             {" — I'll be in your neighborhood doing errands this…"}
+
+
                         </React.Fragment>
                     }
                 />
+
             </ListItem>
             <Divider variant="inset" component="li" />
             <ListItem alignItems="flex-start">
@@ -61,6 +68,7 @@ export default function Review() {
                                 color="textPrimary"
                             >
                                 to Scott, Alex, Jennifer
+                                <RatingStar />
                             </Typography>
                             {" — Wish I could come, but I'm out of town this…"}
                         </React.Fragment>
@@ -83,6 +91,7 @@ export default function Review() {
                                 color="textPrimary"
                             >
                                 Sandra Adams
+                                <RatingStar />
                             </Typography>
                             {' — Do you have Paris recommendations? Have you ever…'}
                         </React.Fragment>
