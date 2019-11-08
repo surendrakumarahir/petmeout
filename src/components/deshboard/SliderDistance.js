@@ -30,7 +30,7 @@ const marks = [
     },
     {
         value: 15,
-        label: '5 km',
+        label: '15 km',
     },
     {
         value: 20,
@@ -50,8 +50,12 @@ function valuetext(value) {
     return `${value}km`;
 }
 
-export default function SilderDestance() {
+export default function SilderDestance(props) {
     const classes = useStyles();
+
+    const handleChange = (event, value) => {
+        props.onChange(value);
+    };
 
     return (
         <div className={classes.root}>
@@ -60,6 +64,7 @@ export default function SilderDestance() {
                 Distance
             </Typography>
             <Slider
+                onChange={(e, val) => handleChange(e, val)}
                 defaultValue={20}
                 getAriaValueText={valuetext}
                 aria-labelledby="discrete-slider-always"

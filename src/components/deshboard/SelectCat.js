@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect,
+    useHistory,
+    useLocation
+} from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
@@ -17,7 +26,8 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function SelectCat() {
+export default function SelectCat(props) {
+    let history = useHistory();
     const classes = useStyles();
     const [state, setState] = React.useState({
         age: '',
@@ -35,6 +45,8 @@ export default function SelectCat() {
             ...state,
             [name]: event.target.value,
         });
+
+        props.onChange(event.target.value);
     };
 
     return (
@@ -53,8 +65,8 @@ export default function SelectCat() {
                     <option value="" />
                     <option value="cat">Cat</option>
                     <option value="dog">Dog</option>
-                    <option value="fist">Fish</option>
-                    <option value="labradog">Labra Dog</option>
+                    <option value="fish">Fish</option>
+                    <option value="labra-dog">Labra Dog</option>
                     <option value="horse">Horse</option>
                     <option value="bird">Bird</option>
                     <option value="rabbit">Rabbit</option>

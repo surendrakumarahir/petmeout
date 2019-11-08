@@ -133,10 +133,6 @@ const UserProfile = () => {
                                     {catProfile[0].des}
                                 </Typography>
                                 <div className={classes.profileHead}></div>
-                                <Typography variant="h5" component="h1">
-                                    Customer Review
-                                </Typography>
-                                <CustomerReview/>
                                 <div className={classes.postContainer}>
                                     <Typography variant="h5" component="h1" >
                                         Harry's listings
@@ -144,6 +140,11 @@ const UserProfile = () => {
                                     <div className={classes.profileHead}></div>
                                     <Post data={postDataDog} discription={false} actions={false} grid={true} />
                                 </div>
+                                <Typography variant="h5" component="h1">
+                                    Customer Review
+                                </Typography>
+                                <CustomerReview/>
+
 
                             </Grid>
                         </Grid>

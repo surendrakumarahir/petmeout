@@ -42,7 +42,11 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-const Deshboard = () => {
+
+
+
+
+const Deshboard = (props) => {
     const classes = useStyles();
     let { id } = useParams();
     const [postData, setPost] = useState([])
@@ -62,6 +66,31 @@ const Deshboard = () => {
         },[])
     //console.log('working');
     // console.log(postData);
+    const myHandler = (id) => {
+        console.log('ssss')
+        console.log(id);
+        if(id) {
+            let postFilter = post.filter((post)=> {
+                return post.cat === id
+            })
+            setPost(postFilter)
+        } else {
+            setPost(post)
+        }
+    }
+
+    const distanceHandler = (value) => {
+        console.log(value);
+        if(value) {
+            let postFilter = post.filter((post)=> {
+                return post.distance === value
+            })
+            setPost(postFilter)
+        } else {
+            setPost(post)
+        }
+    }
+
 
     return (
         <>
@@ -71,7 +100,7 @@ const Deshboard = () => {
                         <CssBaseline />
                         <Grid item xs={false} sm={4} md={7} className={classes.image} />
                         <SignUp/>
-                        {/*<SignIn/>*/}
+                        {/*<SignIn/>*/ console.log(id) }
                      </Grid>
                     <Container className={classes.cardGrid} maxWidth="lg">
 
@@ -86,14 +115,14 @@ const Deshboard = () => {
                                     <Typography variant="h4" component="h2" >
                                         Filters By Distance
                                     </Typography>
-                                    <SliderDistance/>
+                                    <SliderDistance onChange={distanceHandler}/>
                                 </Paper>
 
                                 <Paper className={classes.filterBox} style={{ marginTop: "40px"}}>
                                     <Typography variant="h4" component="h2" >
                                         Category Filter
                                     </Typography>
-                                    <SelectCat/>
+                                    <SelectCat onChange={myHandler} />
                                 </Paper>
 
 

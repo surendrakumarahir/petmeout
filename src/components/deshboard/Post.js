@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 const PostCard = (props) => {
     const classes = useStyles();
     return (
-        <Card className={classes.card} key={props.index}>
+        <Card className={classes.card} key={props.key}>
             <Link to={`/category/${props.post.user.uId}`} className={classes.link} >
                 <CardHeader
                     avatar={
@@ -107,7 +107,7 @@ const Post = (props) => {
                               props.data.map((post, index) => {
                                   return (
                                       <Grid item md={6} >
-                                          <PostCard {...props} post={post} index={index} />
+                                          <PostCard {...props} post={post} key={index} />
                                       </Grid>
 
                                   )
@@ -117,7 +117,7 @@ const Post = (props) => {
                       :
                       props.data.map((post, index) => {
                           return (
-                              <PostCard {...props} post={post} index={index} />
+                              <PostCard {...props} post={post} key={index} />
                            )
                       })
               }

@@ -14,6 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import PhotoGallary from "../components/sliders/PhotoGallary";
 import CustomerReview from "../components/client/Review";
+import MessageBox from "../components/client/MessageBox";
 import Attributes from  "../components/catprofile/Attributes";
 import {catProfile, postDataDog} from "../data";
 
@@ -102,6 +103,7 @@ const CategoryProfile = () => {
                                     Customer Review
                                 </Typography>
                                 <CustomerReview/>
+                                <MessageBox/>
                             </Grid>
                          </Grid>
                     </Container>
